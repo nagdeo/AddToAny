@@ -7,7 +7,6 @@ function App() {
     <div className="App">
       <h1>AddToAny</h1>
       <AddToAny />
-      
     </div>
   );
 }

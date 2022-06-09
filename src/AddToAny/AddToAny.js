@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, {  useState } from "react";
 import "./AddToAny.css";
-import { FaFacebook,FaFacebookMessenger,FaMailBulk,FaLinkedinIn,FaWhatsapp,FaTwitter, FaReddit, FaMailchimp, FaShare, FaShareAlt, FaCross, FaCrosshairs, FaCrop, FaTelegram, FaGetPocket, FaYahoo, FaSkype } from 'react-icons/fa';
+import { FaFacebook,FaFacebookMessenger,FaMailBulk,FaLinkedinIn,FaWhatsapp,FaTwitter, FaReddit, FaShareAlt, FaTelegram, FaGetPocket, FaYahoo, FaSkype } from 'react-icons/fa';
  const AddToAny = (props) => {
    const [socialSites,setSocialSites]=useState(
     [
@@ -18,8 +18,9 @@ import { FaFacebook,FaFacebookMessenger,FaMailBulk,FaLinkedinIn,FaWhatsapp,FaTwi
     ]
      );
      const [shareOrCross,setShareOrCross]=useState("share");
-     const [iconsDropdown,setIconsDropdown]=useState(false)
-   const fnOpenSocialSites =(e,site)=>{
+     const [iconsDropdown,setIconsDropdown]=useState(false);
+
+   const fnOpenSocialSites =(e,site,index)=>{
      if(site.name==="share"){
       let sites=[...socialSites];
       if(sites?.filter((item)=>item.selected===true)?.length>0){
@@ -30,9 +31,13 @@ import { FaFacebook,FaFacebookMessenger,FaMailBulk,FaLinkedinIn,FaWhatsapp,FaTwi
       setShareOrCross("share")
      }
      else{
-       window.open('https://www.addtoany.com/add_to/'+site.name+'?linkurl='+ window.location.href +'&amp;linkname='+ encodeURI("webTitle"));
-     }
+       window.scrollTo(0,0)
+        window.open('https://www.addtoany.com/add_to/'+site.name+'?linkurl='+ window.location.href +'&amp;linkname='+ encodeURI("webTitle"));
+      }
    }
+   
+  
+   
    const fnAddSocialSites=(e,site,index)=>{
     let sites=[...socialSites];
     if(sites[index].selected===true){
@@ -53,7 +58,7 @@ import { FaFacebook,FaFacebookMessenger,FaMailBulk,FaLinkedinIn,FaWhatsapp,FaTwi
        {iconsDropdown &&
         <div className="box-shadow">
          {socialSites?.map((site,i)=>(
-          <button  className={`social-btns ${site.selected?"disable":""}`} onClick={(e)=>fnAddSocialSites(e,site,i)} key={i.toString()}>{site.tag}</button>
+          <button  className={`social-btns  ${site.selected?"disable":""}`} onClick={(e)=>fnAddSocialSites(e,site,i)} key={i.toString()}>{site.tag}</button>
          ))}
         </div>
        }
@@ -63,12 +68,12 @@ import { FaFacebook,FaFacebookMessenger,FaMailBulk,FaLinkedinIn,FaWhatsapp,FaTwi
      <div className="share-btn ">
      {shareOrCross==="share"?
      <div className={` ${socialSites?.filter((item)=>item.selected===true)?.length===0?" tooltip":""}`}>
-            <button className={`social-btns ${socialSites?.filter((item)=>item.selected===true)?.length===0?"disable ":""}`} onClick={(e)=>fnOpenSocialSites(e,{name:"share"})}><FaShareAlt /></button>
+            <button className={`social-btns ${socialSites?.filter((item)=>item.selected===true)?.length===0?"disable ":""}`} onClick={(e)=>fnOpenSocialSites(e,{name:"share"},-1)}><FaShareAlt /></button>
      </div>
-      :<button  className="social-btns cross" onClick={(e)=>fnOpenSocialSites(e,{name:"cross"})}>X</button>}
+      :<button  className="social-btns cross" onClick={(e)=>fnOpenSocialSites(e,{name:"cross"},-1)}>X</button>}
       {socialSites?.map((site,i)=>(
           shareOrCross==="cross"  && 
-          <button className={`social-btns ${site.selected?"d-block":"d-none"}`} onClick={(e)=>fnOpenSocialSites(e,site)} key={i.toString()}>{site.tag}</button>
+          <button  className={`social-btns social_btns soc-btn ${site.selected?"d-block":"d-none"}`} onClick={(e)=>fnOpenSocialSites(e,site,i)} key={i.toString()}>{site.tag}</button>
       ))}
      </div>
      

@@ -1,7 +1,7 @@
 .add-to-any-main-container{
    position: relative;
-   height: 90vh;
-   overflow: hidden;
+   height: 100vh;
+   
 }
 
 .share-btn{
@@ -82,4 +82,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.mouseenter{
+        /* width: 3rem; */
+        font-size: 2rem;
+        /* padding: 1rem; */
+        margin-bottom: 1rem;
+        background: cadetblue;
+        white-space: padd;
+        color: white;
+        /* padding: 0.2rem; */
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem;
+        border-radius: 50%;
 }
