@@ -1,101 +1,76 @@
-.add-to-any-main-container{
-   position: relative;
-   height: 100vh;
-   
+.add-to-any-main-container {
+  position: relative;
+  height: 100vh;
 }
 
-.share-btn{
-    position: absolute;
-    bottom: 10%;
-    right: 5%;
-    border-top-left-radius: 25%;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+.share-btn {
+  position: fixed;
+  bottom: 10%;
+  right: 5%;
+  border-top-left-radius: 25%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.flex_kit{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-div {
+  flex-direction: column;
+}
+.social-btns {
+  background: none;
+  border: none;
+  width: 3rem;
+  height: 2rem;
+  cursor: pointer;
 
+  font-size: 1.2rem;
+}
+.cross {
+  background-color: black;
+  color: white; 
+  margin-left: 2px;
+  border: 1px solid;
+  border-radius: 50%;
+  padding: 1rem;
+  width: 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.d-block {
+  display: block;
+}
+.d-none {
+  display: none;
+}
+.disable {
+  opacity: 0.5;
+}
+.add-social-icons {
+  padding: 1rem;
+}
+.box-shadow {
+  width: 15rem;
+  box-shadow: rgba(100, 100, 111, 0.5) 0px 0px 8px 0px;
+}
+.tooltip:hover::after {
+  content: "Please select social media site to share App url";
 
+  position: absolute;
+  background: black;
+  color: white;
+  top: -5rem;
+  width: 19rem;
+  left: -17rem;
+  border-radius: 7px;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.main-div{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-.social-btns{
-    background: none;
-    border: none;
-    width: 3rem;
-    height: 2rem;
-    cursor: pointer;
-    
-    font-size: 1.2rem;
-}
-.cross{
-    background-color: black;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 2px;
-    border: 1px solid;
-    border-radius: 50%;
-    padding: 1rem;
-    width: 2rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-.d-block{
-    display: block;
-}
-.d-none{
-    display: none;
-}
-.disable{
-    opacity: 0.5;
-}
-.add-social-icons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-}
-.box-shadow{
-    width: 15rem;
-    box-shadow: rgba(100, 100, 111 , 0.5) 0px 0px 8px 0px
-  
-}
-.tooltip:hover::after{
-    content: "Please select social media site to share App url";
-   
-    position: absolute;
-    background: black;
-    color: white;
-    z-index: 3;
-    top: -5rem;
-    width: 19rem;
-    left: -17rem;
-    /* padding: 0.2rem; */
-    border-radius: 7px;
-    height: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.mouseenter{
-        /* width: 3rem; */
-        font-size: 2rem;
-        /* padding: 1rem; */
-        margin-bottom: 1rem;
-        background: cadetblue;
-        white-space: padd;
-        color: white;
-        /* padding: 0.2rem; */
-        height: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0.5rem;
-        border-radius: 50%;
-}
+
